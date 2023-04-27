@@ -50,6 +50,5 @@ namespace Library.Infrastructure.Repositories.Implementation
 
             return author!;
         }
-
     }
 }

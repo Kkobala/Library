@@ -39,6 +39,7 @@ namespace Library.Infrastructure.Repositories.Implementation
 
             return book;
         }
+
         public async Task<List<BookEntity>> GetBooksByAuthor(GetBookByAuthorRequest request)
         {
             var books = await _db.Books

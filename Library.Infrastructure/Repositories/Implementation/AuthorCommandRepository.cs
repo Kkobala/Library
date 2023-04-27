@@ -1,8 +1,6 @@
 ﻿using Library.Domain.Db;
 using Library.Domain.Db.Entities;
-using Library.Domain.Models.Requests;
 using Library.Infrastructure.Repositories.Interface;
-using Microsoft.EntityFrameworkCore;
 
 namespace Library.Infrastructure.Repositories.Implementation
 {
