@@ -1,9 +1,7 @@
-﻿using Library.App.Models.Requests;
-using Library.App.Services.Interface;
+﻿using Library.App.Services.Interface;
 using Library.Domain.Models.Requests;
 using Library.Infrastructure.Command;
 using MediatR;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Library.Api.Controllers
@@ -13,23 +11,12 @@ namespace Library.Api.Controllers
     public class AuthorController : ControllerBase
     {
         private readonly IMediator _mediator;
-        private readonly IAuthorService _authorService;
 
-        public AuthorController(IAuthorService authorService,
+        public AuthorController(
             IMediator mediator)
         {
-            _authorService = authorService;
             _mediator = mediator;
         }
-
-        //[HttpPost("Add-author")]
-        //public async Task<IActionResult> AddAuthor(AddAuthorRequest request)
-        //{
-        //    var author = await _authorService.AddAuthorAsync(request);
-
-        //    return Ok(author);
-        //}
-
 
         [HttpPost("add-author")]
         public async Task<IActionResult> AddAuthor(AddAuthorRequest request)
@@ -39,8 +26,6 @@ namespace Library.Api.Controllers
             return Ok(result);
         }
 
-
-
         [HttpDelete("delete-author")]
         public async Task<IActionResult> DeleteAuthor(RemoveAuthorRequest request)
         {
@@ -48,13 +33,5 @@ namespace Library.Api.Controllers
 
             return Ok();
         }
-
-        //[HttpDelete("delete-author")]
-        //public async Task<IActionResult> DeleteAuthor(RemoveAuthorRequest request)
-        //{
-        //    await _authorService.DeleteAuthorAsync(request);
-
-        //    return Ok();
-        //}
     }
 }

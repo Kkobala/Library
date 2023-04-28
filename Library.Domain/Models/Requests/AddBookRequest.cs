@@ -7,7 +7,5 @@ namespace Library.App.Models.Requests
         public int AuthorId { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
-        //public string AuthorName { get; set; }
-        //public string AuthorLastName { get; set; }
     }
 }
